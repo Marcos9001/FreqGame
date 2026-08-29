@@ -1,5 +1,11 @@
 <template>
   <section class="sound-panel">
+
+    <p class="description">
+      Press Play to listen to the frequencies you have to guess.
+      Press Stop to stop the sound.
+    </p>
+
     <button
       type="button"
       class="start-button"
@@ -15,11 +21,12 @@
     >
       Stop
     </button>
+
   </section>
 </template>
 
 <script setup>
-import { ref, watch, onBeforeUnmount } from 'vue'
+import { ref, onBeforeUnmount } from 'vue'
 
 const props = defineProps({
   level: {
@@ -74,18 +81,12 @@ function playSounds() {
 
   emit('frequencies-generated', frequencies)
 
-  // Create the audio context
   audioContext = new (window.AudioContext || window.webkitAudioContext)()
 
-  // Create one gain node for all oscillators
   gainNode = audioContext.createGain()
-
-  // Keep the volume relatively low
   gainNode.gain.value = 0.1
-
   gainNode.connect(audioContext.destination)
 
-  // Create one oscillator for every frequency.
   oscillators = frequencies.map((frequency) => {
     const oscillator = audioContext.createOscillator()
 
@@ -131,14 +132,23 @@ onBeforeUnmount(() => {
 .sound-panel {
   width: 100%;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  gap: 0.75rem;
   padding: 1rem;
   box-sizing: border-box;
 }
 
+.description {
+  margin: 0 0 0.5rem;
+  text-align: center;
+  color: #555;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
 .start-button,
 .stop-button {
-  flex: 1;
+  width: 100%;
   min-height: 52px;
   border: none;
   border-radius: 12px;
@@ -167,5 +177,10 @@ onBeforeUnmount(() => {
   .stop-button {
     min-height: 56px;
   }
+
+  .description {
+    font-size: 0.9rem;
+  }
 }
 </style>
+

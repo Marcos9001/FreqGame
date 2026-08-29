@@ -1,11 +1,17 @@
 <template>
   <section class="sound-panel">
+
+    <p class="description">
+      Use Start to listen to the selected frequencies.
+      Use Stop to stop the sound.
+    </p>
+
     <button
       type="button"
       class="start-button"
       @click="playSounds"
     >
-      Start
+      Play
     </button>
 
     <button
@@ -15,6 +21,7 @@
     >
       Stop
     </button>
+
   </section>
 </template>
 
@@ -125,14 +132,23 @@ onBeforeUnmount(() => {
 .sound-panel {
   width: 100%;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  gap: 0.75rem;
   padding: 1rem;
   box-sizing: border-box;
 }
 
+.description {
+  margin: 0 0 0.5rem;
+  text-align: center;
+  color: #555;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
 .start-button,
 .stop-button {
-  flex: 1;
+  width: 100%;
   min-height: 52px;
   border: none;
   border-radius: 12px;
@@ -161,5 +177,10 @@ onBeforeUnmount(() => {
   .stop-button {
     min-height: 56px;
   }
+
+  .description {
+    font-size: 0.9rem;
+  }
 }
 </style>
+

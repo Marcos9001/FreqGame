@@ -2,6 +2,10 @@
 
 A small web game where you have to **listen to randomly generated frequencies and guess them using sliders**.
 
+## Where to Play
+
+You can find the game here: https://marcos9001.github.io/FreqGame/
+
 ## How to Play
 
 1. Choose a difficulty level.
