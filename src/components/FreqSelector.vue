@@ -1,7 +1,7 @@
 <template>
   <section class="slider-panel">
     <div class="panel-header">
-      <h2>Adjust Values</h2>
+      <h2>Select Frequencies</h2>
       <span class="level-label">Level {{ level }}</span>
     </div>
 
@@ -13,7 +13,7 @@
       >
         <div class="slider-info">
           <label :for="`slider-${index}`">
-            Slider {{ index + 1 }}
+            Freq: {{ index + 1 }}
           </label>
 
           <span class="slider-value">
