@@ -45,8 +45,3 @@ The frequencies are randomly generated between **250 Hz and 800 Hz**.
 ## Compatibility
 
 The game is designed primarily for **mobile devices**, but it can also be played on desktop browsers.
-
-## License
-
-No license is currently specified for this project.
-
