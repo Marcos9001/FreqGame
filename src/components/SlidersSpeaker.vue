@@ -2,7 +2,7 @@
   <section class="sound-panel">
 
     <p class="description">
-      Use Start to listen to the selected frequencies.
+      Use Play to listen to the selected frequencies.
       Use Stop to stop the sound.
     </p>
 
